@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Open Jobs</title>
+  <meta name="description" content="Find open jobs and apply directly on the company's website.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <h1>Jobs that need people right now</h1>
+    <p>Pick a job, tap Apply, and you go straight to the company's own page.</p>
+  </header>
+
+  <main>
+    <div class="filters">
+      <input id="search" type="search" placeholder="Search job title or company" aria-label="Search jobs">
+      <select id="location" aria-label="Filter by location"><option value="">All locations</option></select>
+      <select id="type" aria-label="Filter by job type"><option value="">All job types</option></select>
+    </div>
+
+    <p id="count" class="count" aria-live="polite"></p>
+    <ul id="list" class="list"></ul>
+    <p id="empty" class="empty" hidden>No jobs match your search. Clear a filter or try different words.</p>
+    <section class="sites">
+      <h2>More places to find jobs</h2>
+      <ul>
+        <li><a href="https://www.pnet.co.za" target="_blank" rel="noopener noreferrer">PNet</a></li>
+        <li><a href="https://www.careerjunction.co.za" target="_blank" rel="noopener noreferrer">CareerJunction</a></li>
+        <li><a href="https://www.careers24.com" target="_blank" rel="noopener noreferrer">Careers24</a></li>
+        <li><a href="https://za.indeed.com" target="_blank" rel="noopener noreferrer">Indeed South Africa</a></li>
+        <li><a href="https://www.gumtree.co.za/s-jobs/v1c8p1" target="_blank" rel="noopener noreferrer">Gumtree Jobs</a></li>
+        <li><a href="https://www.adzuna.co.za" target="_blank" rel="noopener noreferrer">Adzuna South Africa</a></li>
+        <li><a href="https://www.jobmail.co.za" target="_blank" rel="noopener noreferrer">Jobmail</a></li>
+        <li><a href="https://sayouth.mobi" target="_blank" rel="noopener noreferrer">SAYouth.mobi (free)</a></li>
+        <li><a href="https://www.dpsa.gov.za/newsroom/psvc/" target="_blank" rel="noopener noreferrer">Government vacancies (DPSA)</a></li>
+        <li><a href="https://www.linkedin.com/jobs" target="_blank" rel="noopener noreferrer">LinkedIn Jobs</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>Always check a job is real before sharing personal details. Never pay money to apply.</footer>
+
+  <script src="jobs.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
