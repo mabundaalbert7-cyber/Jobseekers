@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Free CV Maker</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="cvstyle.css">
+</head>
+<body>
+  <header class="top noprint">
+    <div class="account"><a href="index.html">&larr; Back to jobs</a></div>
+    <h1>Make your CV</h1>
+    <p>Fill in the form, check your CV, then save it as a PDF.</p>
+  </header>
+
+  <div class="cvwrap">
+    <section class="formcol noprint">
+      <h2>Your details</h2>
+      <label>Full name <input id="name" autocomplete="name"></label>
+      <label>Job you want (e.g. Cashier) <input id="title"></label>
+      <label>Phone / WhatsApp <input id="phone" type="tel" autocomplete="tel"></label>
+      <label>Email <input id="email" type="email" autocomplete="email"></label>
+      <label>Area you live in (e.g. Nelmapius, Pretoria) <input id="location"></label>
+      <label>About me (2 to 3 short sentences) <textarea id="summary" rows="3"></textarea></label>
+
+      <h2>Work experience</h2>
+      <div id="jobs"></div>
+      <button type="button" class="ghost" id="addJob">+ Add a job</button>
+
+      <h2>Education</h2>
+      <div id="schools"></div>
+      <button type="button" class="ghost" id="addSchool">+ Add school or course</button>
+
+      <h2>Skills and languages</h2>
+      <label>Skills (separate with commas) <textarea id="skills" rows="2" placeholder="Customer service, Teamwork, Cash handling"></textarea></label>
+      <label>Languages (separate with commas) <input id="languages" placeholder="English, Sepedi, Zulu"></label>
+
+      <p class="hint">Your details stay on your phone. Nothing is sent to anyone.</p>
+      <button type="button" class="apply" id="download">Save as PDF</button>
+      <p class="hint">In the print window, choose <b>Save as PDF</b> as the printer.</p>
+      <button type="button" class="ghost" id="clear">Clear everything</button>
+    </section>
+
+    <section class="printarea">
+      <h2 class="noprint">Your CV preview</h2>
+      <article id="cv"></article>
+    </section>
+  </div>
+  <script src="cvscript.js"></script>
+</body>
+</html>
