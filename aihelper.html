@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Job Helper</title>
+  <link rel="stylesheet" href="theme.css">
+  <style>
+    .tabs { display: flex; gap: 8px; overflow-x: auto; margin-bottom: 14px; }
+    .panel[hidden] { display: none; }
+    .panel .card { margin-bottom: 14px; }
+    .aiout { white-space: pre-wrap; margin-top: 14px; padding: 14px; background: #f1f6fb; border-radius: 12px; }
+    .aiout:empty { display: none; }
+    .chatlog { max-height: 55vh; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; margin-bottom: 12px; }
+    .b { max-width: 90%; padding: 10px 14px; border-radius: 14px; white-space: pre-wrap; overflow-wrap: anywhere; }
+    .b.me { align-self: flex-end; background: var(--accent); color: #fff; }
+    .b.ai { align-self: flex-start; background: #e9f0f7; }
+    .sendrow { display: flex; gap: 8px; }
+    .sendrow input { flex: 1; }
+    .sendrow .apply { width: auto; }
+    .note { color: var(--muted); font-size: 0.85rem; margin: 10px 2px 0; }
+    .ghost { display: inline-block; text-decoration: none; padding: 10px 16px; font: inherit; font-weight: 600; cursor: pointer; background: #fff; color: var(--accent); border: 1px solid var(--accent); border-radius: 12px; }
+  </style>
+</head>
+<body>
+  <header class="top">
+    <div class="nav">
+      <a class="brand" href="index.html">Job<span>seekers</span></a>
+      <div class="account"><a href="index.html">&larr; Jobs</a></div>
+    </div>
+    <h1>AI job helper</h1>
+    <p>Free help with your CV, finding the right job, and practising for interviews.</p>
+  </header>
+
+  <main id="aiMain">
+    <div class="tabs" role="tablist">
+      <button class="chip" data-tab="cv" aria-pressed="true">CV helper</button>
+      <button class="chip" data-tab="assistant" aria-pressed="false">Job assistant</button>
+      <button class="chip" data-tab="interview" aria-pressed="false">Interview practice</button>
+    </div>
+
+    <section class="panel" id="p-cv">
+      <div class="card">
+        <h2>CV helper</h2>
+        <label>Job you want <input id="cvJob" placeholder="e.g. Cashier"></label>
+        <label>Tell me about yourself in your own words
+          <textarea id="cvNotes" rows="5" placeholder="e.g. I worked 1 year at a spaza shop, I speak Sepedi and English, I am good with customers"></textarea>
+        </label>
+        <button class="apply" id="cvGo" type="button">Write my CV text</button>
+        <div id="cvOut" class="aiout"></div>
+        <button class="ghost" id="cvCopy" type="button" hidden>Copy text</button>
+        <p class="note">Then paste it into the <a href="cvmaker.html">CV maker</a>.</p>
+      </div>
+    </section>
+
+    <section class="panel" id="p-assistant" hidden>
+      <div class="card">
+        <h2>Job assistant</h2>
+        <div id="aLog" class="chatlog"></div>
+        <div class="sendrow"><input id="aIn" placeholder="e.g. I finished matric and I want any job"><button class="apply" id="aSend" type="button">Send</button></div>
+      </div>
+    </section>
+
+    <section class="panel" id="p-interview" hidden>
+      <div class="card">
+        <h2>Interview practice</h2>
+        <label>Job you are practising for <input id="iJob" placeholder="e.g. Shop assistant"></label>
+        <button class="apply" id="iStart" type="button">Start interview</button>
+        <div id="iLog" class="chatlog" style="margin-top:14px"></div>
+        <div class="sendrow"><input id="iIn" placeholder="Type your answer"><button class="apply" id="iSend" type="button">Send</button></div>
+      </div>
+    </section>
+
+    <p class="note">The first time, a Puter sign-in window opens. Create a free Puter account there to use the AI. AI can make mistakes. Never type your ID number, bank details or passwords.</p>
+  </main>
+
+  <script src="https://js.puter.com/v2/"></script>
+  <script src="jobs.js"></script>
+  <script src="aihelper.js"></script>
+</body>
+</html>
